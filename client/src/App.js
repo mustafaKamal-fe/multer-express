@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from '@material-ui/core';
+import UploadOperation from './comp/Upload';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Container>
+			<UploadOperation url='files/single' />
+			<UploadOperation url='files/many' options={{ single: false }} />
+
+			<footer>
+				<a href='https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects'>
+					<h3>The Best Guide to know about form data and sending files...</h3>
+				</a>
+			</footer>
+		</Container>
+	);
 }
 
 export default App;
