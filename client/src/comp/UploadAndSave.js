@@ -1,11 +1,7 @@
 import { Button, Divider, Input, Typography } from '@material-ui/core';
 import { useState } from 'react';
 
-/**
- *
- * Send single file
- */
-export default function UploadOperation({ url, options = { single: true } }) {
+export default function UploadAndSave({ url, options = { single: true } }) {
 	const { single } = options;
 	const [file, setFile] = useState();
 	const [files, setFiles] = useState([]);
@@ -26,7 +22,7 @@ export default function UploadOperation({ url, options = { single: true } }) {
 
 		return (
 			<div>
-				<Typography variant='h4'>Upload Single File</Typography>
+				<Typography variant='h4'>Upload Single File And SaveTo fs</Typography>
 				<h5>
 					Uploaded File: <h6>{file && file.name}</h6>
 				</h5>
@@ -71,7 +67,9 @@ export default function UploadOperation({ url, options = { single: true } }) {
 		};
 		return (
 			<div>
-				<Typography variant='h4'>Upload Multiple Files</Typography>
+				<Typography variant='h4'>
+					Upload Multiple Files And Save To fs
+				</Typography>
 				<h5>
 					Uploaded Files:
 					<h6>
