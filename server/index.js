@@ -1,9 +1,13 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 const path = require('path');
+
+const PORT =
+	process.env.NODE_ENV === 'development' ? process.env.DEV_PORT : 5000;
 
 var filesRouter = require('../routes/files');
 
@@ -27,11 +31,11 @@ if (!isDev && cluster.isMaster) {
 	app.use(cors());
 	app.use(logger('dev'));
 	app.use(express.json());
-	app.use(express.urlencoded({ extended: false }));
+	app.use(express.urlencoded({ extended: true }));
 	app.use(cookieParser());
 
 	// Priority serve any static files.
-	app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
+	app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 	app.use('/api/files', filesRouter);
 
@@ -55,5 +59,13 @@ if (!isDev && cluster.isMaster) {
 		// render the error page
 		res.status(err.status || 500);
 		res.json({ error: err });
+	});
+
+	app.listen(PORT, function () {
+		console.error(
+			`Node ${
+				isDev ? 'dev server' : 'cluster worker ' + process.pid
+			}: listening on port ${PORT}`
+		);
 	});
 }
