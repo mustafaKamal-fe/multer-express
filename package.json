@@ -7,10 +7,10 @@
 		"node": "12.22.3"
 	},
 	"scripts": {
-		"dev:server": "nodemon index.js",
-		"dev:client": "cd client && yarn start",
-		"dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
-		"start": "cd client/ && yarn && yarn build && cd .. && node index.js"
+		"server": "nodemon index.js",
+		"client": "cd client && yarn start",
+		"dev": "concurrently \"yarn server\" \"yarn client\"",
+		"prod": "cd client/ && yarn && yarn build && cd .. && node index"
 	},
 	"cacheDirectories": [
 		"node_modules",
