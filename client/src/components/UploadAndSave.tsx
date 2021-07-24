@@ -10,10 +10,15 @@ export default function UploadAndSave({ url, options = { single: true } }) {
 		const form = new FormData();
 		form.append('image', file);
 
-		await fetch(`http://localhost:3001/${url}`, {
-			method: 'POST',
-			body: form,
-		});
+		await fetch(
+			`${
+				process.env.NODE_ENV === 'development' && 'http://localhost:3001'
+			}${url}`,
+			{
+				method: 'POST',
+				body: form,
+			}
+		);
 	};
 	if (single) {
 		const handleChangeSingle = (e) => {
@@ -60,10 +65,15 @@ export default function UploadAndSave({ url, options = { single: true } }) {
 			// 	form.append(`images[${i}]`, files[i]);
 			// }
 
-			await fetch(`http://localhost:3001/${url}`, {
-				method: 'POST',
-				body: form,
-			});
+			await fetch(
+				`${
+					process.env.NODE_ENV === 'development' && 'http://localhost:3001'
+				}${url}`,
+				{
+					method: 'POST',
+					body: form,
+				}
+			);
 		};
 		return (
 			<div>
