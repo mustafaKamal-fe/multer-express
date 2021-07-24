@@ -1,0 +1,17 @@
+{
+	"name": "multer-express",
+	"description": "This is how you upload files using multer and express.",
+	"scripts": {},
+	"env": {},
+	"formation": {
+		"web": {
+			"quantity": 1
+		}
+	},
+	"addons": [],
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		}
+	]
+}
