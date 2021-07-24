@@ -29,10 +29,15 @@ export default function Distros({ url }) {
 			form.append('gTwo', file);
 		});
 
-		await fetch(`http://localhost:3001/${url}`, {
-			method: 'POST',
-			body: form,
-		});
+		await fetch(
+			`${
+				process.env.NODE_ENV === 'development' && 'http://localhost:3001'
+			}${url}`,
+			{
+				method: 'POST',
+				body: form,
+			}
+		);
 	};
 
 	return (
