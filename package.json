@@ -1,12 +1,19 @@
 {
-	"name": "cra-express-dev",
-	"version": "0.0.0",
-	"private": true,
+	"name": "multer-express",
+	"version": "0.1.0",
+	"description": "This is how you upload files using multer and express.",
+	"private": false,
 	"scripts": {
 		"server": "nodemon ./bin/www",
 		"client": "cd client && yarn start",
-		"start": "concurrently \"yarn server\" \"yarn client\""
+		"start:dev": "concurrently \"yarn server\" \"yarn client\"",
+		"start": "node ./bin/www",
+		"build": "cd client/ && yarn && yarn build"
 	},
+	"cacheDirectories": [
+		"node_modules",
+		"client/node_modules"
+	],
 	"dependencies": {
 		"cookie-parser": "~1.4.4",
 		"cors": "^2.8.5",
@@ -18,6 +25,29 @@
 		"nodemon": "^2.0.7"
 	},
 	"devDependencies": {
-		"concurrently": "^6.2.0"
+		"@types/node": "^16.4.1",
+		"concurrently": "^6.2.0",
+		"typescript": "^4.3.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mustafaKamal-fe/multer-express"
+	},
+	"keywords": [
+		"node",
+		"heroku",
+		"create-react-app",
+		"react",
+		"express",
+		"multer",
+		"formData",
+		"file",
+		"upload"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mustafa Kamal",
+		"email": "gistcodee@gmail.com",
+		"url": "https://github.com/mustafaKamal-fe/"
 	}
 }

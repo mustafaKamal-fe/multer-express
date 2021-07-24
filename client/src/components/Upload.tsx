@@ -1,9 +1,13 @@
 import { Button, Divider, Input, Typography } from '@material-ui/core';
 import { useState } from 'react';
 
-export default function UploadAndSave({ url, options = { single: true } }) {
+/**
+ *
+ * Send single file
+ */
+export default function UploadOperation({ url, options = { single: true } }) {
 	const { single } = options;
-	const [file, setFile] = useState();
+	const [file, setFile] = useState(null);
 	const [files, setFiles] = useState([]);
 
 	const handleSubmitSingle = async () => {
@@ -22,7 +26,7 @@ export default function UploadAndSave({ url, options = { single: true } }) {
 
 		return (
 			<div>
-				<Typography variant='h4'>Upload Single File And SaveTo fs</Typography>
+				<Typography variant='h4'>Upload Single File</Typography>
 				<h5>
 					Uploaded File: <h6>{file && file.name}</h6>
 				</h5>
@@ -67,9 +71,7 @@ export default function UploadAndSave({ url, options = { single: true } }) {
 		};
 		return (
 			<div>
-				<Typography variant='h4'>
-					Upload Multiple Files And Save To fs
-				</Typography>
+				<Typography variant='h4'>Upload Multiple Files</Typography>
 				<h5>
 					Uploaded Files:
 					<h6>

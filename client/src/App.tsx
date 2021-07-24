@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core';
-import UploadOperation from './comp/Upload';
-import Distros from './comp/Distros';
-import UploadAndSave from './comp/UploadAndSave';
+import UploadOperation from './components/Upload';
+import Distros from './components/Distros';
+import UploadAndSave from './components/UploadAndSave';
 
 function App() {
 	return (
