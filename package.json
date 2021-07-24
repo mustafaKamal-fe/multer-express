@@ -4,14 +4,13 @@
 	"description": "This is how you upload files using multer and express.",
 	"private": false,
 	"engines": {
-		"node": "12.x"
+		"node": "12.22.3"
 	},
 	"scripts": {
-		"server": "nodemon server",
-		"client": "cd client && yarn start",
-		"dev": "concurrently \"yarn server\" \"yarn client\"",
-		"start": "node server",
-		"build": "cd client/ && yarn && yarn build"
+		"dev:server": "nodemon index.js",
+		"dev:client": "cd client && yarn start",
+		"dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
+		"start": "cd client/ && yarn && yarn build && cd .. && node index.js"
 	},
 	"cacheDirectories": [
 		"node_modules",
