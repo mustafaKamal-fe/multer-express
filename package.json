@@ -3,6 +3,9 @@
 	"version": "0.1.0",
 	"description": "This is how you upload files using multer and express.",
 	"private": false,
+	"engines": {
+		"node": "12.x"
+	},
 	"scripts": {
 		"server": "nodemon ./bin/www",
 		"client": "cd client && yarn start",
