@@ -4,10 +4,11 @@
 	"description": "This is how you upload files using multer and express.",
 	"private": false,
 	"engines": {
-		"node": "12.22.3"
+		"node": "12.x"
 	},
 	"scripts": {
-		"start": "cd client/ && yarn && yarn build && cd .. && node index"
+		"start": "node index",
+		"build": "cd client/ && yarn && yarn build"
 	},
 	"cacheDirectories": [
 		"node_modules",
