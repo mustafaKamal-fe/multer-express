@@ -5,10 +5,9 @@ var logger = require('morgan');
 const cors = require('cors');
 const path = require('path');
 
-var filesRouter = require('./routes/files');
+var filesRouter = require('../routes/files');
 
 const isDev = process.env.NODE_ENV !== 'production';
-
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
 	console.error(`Node cluster master ${process.pid} is running`);
@@ -58,5 +57,3 @@ if (!isDev && cluster.isMaster) {
 		res.json({ error: err });
 	});
 }
-
-module.exports = app;

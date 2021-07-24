@@ -7,10 +7,10 @@
 		"node": "12.x"
 	},
 	"scripts": {
-		"server": "nodemon ./bin/www",
+		"server": "nodemon server",
 		"client": "cd client && yarn start",
 		"start:dev": "concurrently \"yarn server\" \"yarn client\"",
-		"start": "node ./bin/www",
+		"start": "node server",
 		"build": "cd client/ && yarn && yarn build"
 	},
 	"cacheDirectories": [
