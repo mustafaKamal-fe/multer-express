@@ -42,5 +42,11 @@
 		"@types/react": "^17.0.14",
 		"@types/react-dom": "^17.0.9",
 		"typescript": "^4.3.5"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Mustafa Kamal",
+		"email": "gistcodee@gmail.com",
+		"url": "https://github.com/mustafaKamal-fe/"
 	}
 }
