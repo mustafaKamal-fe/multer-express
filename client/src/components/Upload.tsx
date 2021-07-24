@@ -13,16 +13,15 @@ export default function UploadOperation({ url, options = { single: true } }) {
 	const handleSubmitSingle = async () => {
 		const form = new FormData();
 		form.append('image', file);
+		const api =
+			process.env.NODE_ENV === 'development'
+				? `${process.env.DEV_API}${url}`
+				: `${url}`;
 
-		await fetch(
-			`${
-				process.env.NODE_ENV === 'development' && 'http://localhost:3001'
-			}${url}`,
-			{
-				method: 'POST',
-				body: form,
-			}
-		);
+		await fetch(api, {
+			method: 'POST',
+			body: form,
+		});
 	};
 	if (single) {
 		const handleChangeSingle = (e) => {
@@ -68,16 +67,15 @@ export default function UploadOperation({ url, options = { single: true } }) {
 			// for (let i = 0; i < files.length; i++) {
 			// 	form.append(`images[${i}]`, files[i]);
 			// }
+			const api =
+				process.env.NODE_ENV === 'development'
+					? `${process.env.DEV_API}${url}`
+					: `${url}`;
 
-			await fetch(
-				`${
-					process.env.NODE_ENV === 'development' && 'http://localhost:3001'
-				}${url}`,
-				{
-					method: 'POST',
-					body: form,
-				}
-			);
+			await fetch(api, {
+				method: 'POST',
+				body: form,
+			});
 		};
 		return (
 			<div>
