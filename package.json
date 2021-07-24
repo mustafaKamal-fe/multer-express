@@ -7,9 +7,6 @@
 		"node": "12.22.3"
 	},
 	"scripts": {
-		"server": "nodemon index.js",
-		"client": "cd client && yarn start",
-		"dev": "concurrently \"yarn server\" \"yarn client\"",
 		"prod": "cd client/ && yarn && yarn build && cd .. && node index"
 	},
 	"cacheDirectories": [
