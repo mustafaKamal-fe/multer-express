@@ -7,7 +7,7 @@ const cors = require('cors');
 const path = require('path');
 var filesRouter = require('./routes/files');
 
-const PORT = process.env.DEV_PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 var app = express();
 app.use(cors());
